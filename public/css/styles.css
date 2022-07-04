@@ -1,0 +1,173 @@
+/* -------------------
+GLOBAL
+---------------------*/
+
+
+button {
+    background-color: #4285f3;
+    border: 1px solid #1a5fd0;
+    border-radius: 5px;
+    color: white ;
+    font-size: 15px; 
+    padding: 10px 18px;
+}
+
+button:hover {
+    background-color: #5998ff;
+}
+
+body {
+    color: #5b5b5b;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    max-width: 100%;
+}
+
+
+/* -------------------
+SEARCH.HTML 
+---------------------*/
+
+
+.searchpage {
+    margin: 0 auto;
+    text-align: center;   
+    width: 400px;
+} 
+
+.searchpage img {
+    margin-top: 100px;
+    width: 150px;
+}
+
+.searchpage input {
+    padding-left: 30px;
+    border: 1px solid #c4c4c4;
+    border-radius: 20px;
+    color: #5b5b5b;
+    height: 35px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.searchpage input:focus {
+    outline: none
+}
+
+.searchpage button {
+    margin: auto;
+}
+
+/* -----------------
+ RESULTS.HTML 
+ ------------------*/
+
+ /* Nav */
+
+ nav {
+    border-bottom: 1px solid #c4c4c4;
+    display: grid; 
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+    padding: 10px;
+    grid-template-columns: 110px auto;
+    grid-column-gap: 30px;
+ }
+
+nav .logo {
+    padding-left: 20px;
+    padding-top: 5px;
+    width: 100px;
+
+}
+
+nav form {
+    display: grid;
+    grid-template-columns: 400px auto; 
+    grid-column-gap: 20px;
+    width: 400px;
+
+}
+nav form input {
+    border: 1px solid #c4c4c4;
+    border-radius: 20px;
+    box-sizing: border-box;   
+ 
+    height: 40px;
+    padding-left: 30px;
+    width: 100%; 
+}
+
+nav form input:focus {
+    outline: none;
+}
+
+nav form button {
+    width: 80px;
+}
+
+/* Headings / Paragraph  */
+
+.research {
+    margin-top: 30px;
+    margin-left: 140px;
+    margin-bottom: 20px
+
+}
+
+.research > small {
+    font-size: 14px;
+}
+
+
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 6px 0;
+}
+
+p {
+    font-size: 14px;
+    margin: 10px 0 5px 0;
+}
+
+/* Links */
+
+a{
+    color: #1a0dab;
+}
+
+a:visited{
+    color: #660099;
+}
+
+h2 a {
+    text-decoration: none;
+}
+
+/* result item */
+
+.result {
+    font-family: Helvetica, sans-serif;
+    margin-left: 140px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 700px
+}
+
+.result > small {
+    color: black;
+    font-size: 14px;
+    margin: 0;
+}
+
+ul {
+    margin: 5px 0;
+    padding: 0;
+}
+
+.result ul li {
+    display: inline;
+    font-size: 12px;
+    margin: 0 10px 0 0;
+}
