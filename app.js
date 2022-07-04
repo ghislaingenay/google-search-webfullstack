@@ -17,15 +17,21 @@ const app = express()
 // View Engine (Handlebars)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
-app.set('view options', { layout: 'layouts/main' })
+app.set('view options', {
+  layout: 'layouts/main'
+})
 hbs.registerPartials(__dirname + '/views/partials', err => {})
 hbsUtils.registerWatchedPartials(__dirname + '/views/partials')
 
 // Middleware
 app.use(logger('tiny'))
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.urlencoded({
+  extended: false
+}))
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(methodOverride('_method'))
@@ -47,7 +53,7 @@ const search = require('./controllers/search.js');
 app.use('/', search);
 
 
-const results =  require('./controllers/results.js')
+const results = require('./controllers/results.js')
 app.use('/', results);
 
 
