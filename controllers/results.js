@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 
-let data = [{
+let results = [{
         title: 'JS tutorials',
         description: 'The best JavaScript tutorials in the galaxy!',
         url: 'https://www.w3schools.com',
@@ -26,7 +26,7 @@ let data = [{
         }]
     },
     {
-        title: 'JavaScript - Wikipedia',
+        title: 'JavaScript - Wikipedia - Tortuga Coders',
         description: "JavaScript is often abbreviated as JS, is a programming language that conforms to the ECMAScript specification interpreted, or just-in-time compiled programming language with first - class ",
         url: 'en.wikipedia.org',
         links: [{
@@ -43,8 +43,8 @@ let data = [{
 
 
 
-router.get("/results", (req, res) => {
-    res.render('results')
+router.get("/results", (req, res) => {  
+    res.render("results", {results})
 })
 // Create POST controller
 // router.post("/results", (req, res) => {

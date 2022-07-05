@@ -5,38 +5,19 @@
     <button type="submit">Search</button>
   </form>
 </nav>
+
 <div class="research">
-  <small>37 Results</small>
+  <small>{{results.length}} Results</small>
 </div>
+{{#each results as |result|}}
 <div class="result">
-  <small>ww3.schools.com</small>
-  <h2><a href="">JavaScript Tutorial - W3School</a></h2>
-  <p>Well organized and easy to understand Web building tutorials
-    of examples of how to use HTML, CSS, JavaScript, ...</p>
+  <small>{{result.url}}</small>
+  <h2><a href="{{result.url}}">{{result.title}}</a></h2>
+  <p>{{result.description}}</p>
   <ul>
-    <li><a href="">JavaScript Introduction</a></li>
-    <li><a href="">JS Functions</a></li>
-    <li><a href="">JavaScript Examples</a></li>
+    {{#each result.links as |link|}}
+    <li><a href="{{link.url}}">{{link.title}}</a></li>
+    {{/each}}
   </ul>
 </div>
-<div class="result">
-  <small> developer.mozilla.org</small>
-  <h2><a href="">JavaScript | MDN</a></h2>
-  <p>JavaScript is a lightweight, interpreted, or just-in-time
-    compiled programming language with first-class functions</p>
-  <ul>
-    <li><a href="">JavaScript Operator</a></li>
-    <li><a href="">JavaScript Code</a></li>
-    <li><a href="">JavaScript Meaning </a></li>
-  </ul>
-</div>
-<div class="result">
-  <small> en.wikipedia.org</small>
-  <h2><a href="">JavaScript - Wikipedia</a></h2>
-  <p>JavaScript is often abbreviated as JS, is a programming
-    language that conforms to the ECMAScript specification</p>
-  <ul>
-    <li><a href="">JavaScript Online</a></li>
-    <li><a href="">JavaScript Definition</a></li>
-  </ul>
-</div>
+{{/each}}
