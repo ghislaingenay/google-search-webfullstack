@@ -50,12 +50,10 @@ router.post("/", (req, res) => {
 })
 
 router.post("/results", (req, res) => { 
-    let searchInput = new Set(req.body.search) 
-    results.filter((element, id) => {
-        searchInput.has(element)
+    let searchInput = req.body.search
+    results = results.filter((element, id) => {
+        match(/searchInput/g)
     })
-
-
     res.render("results", {results})
 })
 // Create POST controller
