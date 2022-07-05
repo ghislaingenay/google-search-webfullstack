@@ -50,11 +50,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 const search = require('./controllers/search.js');
-app.get('/', search);
+app.use('/', search);
 
 
 const results = require('./controllers/results.js')
-app.get('/results', results);
+app.use('/results', results);
 
 
 // Catch 404 and forward to error handler
