@@ -39,18 +39,22 @@ let data = [{
     },
 ]
 
-router.get("/", (req, res) => {  
+router.get("/", (req, res) => {
     res.render("results")
 })
 
 const filtering = (array, param) => {
-     return array.filter((element, id) => {
-         return element.description.includes(param)
+    let reg = new RegExp(param, "gi")
+
+    return array.filter((element, id) => {
+        return element.description.match(param) || element.title.match(param) || element.description.match(param) 
     })
 }
 
-router.post("/", (req, res) => {  
-    res.render("results", {results: filtering(data, req.body.search)})
+router.post("/", (req, res) => {
+    res.render("results", {
+        results: filtering(data, req.body.search)
+    })
 })
 
 
