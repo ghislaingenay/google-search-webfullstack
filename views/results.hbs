@@ -6,8 +6,20 @@
   </form>
 </nav>
 
-<div class="research">
+
+  {{#if results.length}}
+  <div class="research">
   <small>{{results.length}} Results</small>
+  </div>
+  {{else}}
+    <div class="research">
+  <small>0 Result</small>
+  </div>
+  <div class="result">
+  <p>No results for these page</p>
+    </div>
+
+  {{/if}}
 </div>
 {{#each results as |result|}}
 <div class="result">

@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 
-let results = [{
+let data = [{
         title: 'JS tutorials Hello',
         description: 'The best JavaScript tutorials in the galaxy!',
         url: 'https://www.w3schools.com',
@@ -45,21 +45,19 @@ router.get("/", (req, res) => {
 
 
 router.post("/", (req, res) => {  
-    console.log(req.body.search)
-    res.render("results", {results})
+    let searchInput = req.body.search
+    let resultsArray = data.filter((element, id) => { 
+        return element.description.includes(searchInput)
+    })
+    res.render("results", {results: resultsArray})
 })
 
 router.post("/results", (req, res) => { 
     let searchInput = req.body.search
-    results = results.filter((element, id) => {
-        match(/searchInput/g)
+    let resultsArray = data.filter((element, id) => { 
+        return element.description.includes(searchInput)
     })
-    res.render("results", {results})
+    res.render("results", {results: resultsArray})
 })
-// Create POST controller
-// router.post("/results", (req, res) => {
-//    let research = req.body.search
-//    res.send("This is done")
-//   })
-// Export module
+
 module.exports = router
