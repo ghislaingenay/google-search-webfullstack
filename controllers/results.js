@@ -43,21 +43,16 @@ router.get("/", (req, res) => {
     res.render("results")
 })
 
+const filtering = (array, param) => {
+     return array.filter((element, id) => {
+         return element.description.includes(param)
+    })
+}
 
 router.post("/", (req, res) => {  
-    let searchInput = req.body.search
-    let resultsArray = data.filter((element, id) => { 
-        return element.description.includes(searchInput)
-    })
-    res.render("results", {results: resultsArray})
+    res.render("results", {results: filtering(data, req.body.search)})
 })
 
-router.post("/results", (req, res) => { 
-    let searchInput = req.body.search
-    let resultsArray = data.filter((element, id) => { 
-        return element.description.includes(searchInput)
-    })
-    res.render("results", {results: resultsArray})
-})
+
 
 module.exports = router
