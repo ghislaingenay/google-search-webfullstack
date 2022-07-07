@@ -2,6 +2,8 @@
 const express = require('express')
 const router = express.Router()
 
+const filtering = require("../services/filtering.js")
+
 let data = [{
         title: 'JS tutorials Hello',
         description: 'The best JavaScript tutorials in the galaxy!',
@@ -39,20 +41,14 @@ let data = [{
     },
 ]
 
-router.get("/", (req, res) => {  
+router.get("/", (req, res) => {
     res.render("results")
 })
 
-const filtering = (array, param) => {
-     return array.filter((element, id) => {
-         return element.description.includes(param)
+router.post("/", (req, res) => {
+    res.render("results", {
+        results: filtering(data, req.body.search)
     })
-}
-
-router.post("/", (req, res) => {  
-    res.render("results", {results: filtering(data, req.body.search)})
 })
-
-
 
 module.exports = router
