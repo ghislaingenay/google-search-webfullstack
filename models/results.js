@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 // Create the results moodel
 
-const searchSchema = new mongoose.Schema({
+const resultSchema = new mongoose.Schema({
   title: {
     type: String,
     require: true
@@ -19,7 +19,8 @@ const searchSchema = new mongoose.Schema({
     title: String,
     url: String,
   }]
-}
+})
 
-const Search = mongoose.model("Search", searchSchema)
+const Results = mongoose.model("Search", searchSchema)
 
+module.exports = Results;
