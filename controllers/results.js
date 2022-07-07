@@ -10,7 +10,7 @@ const searchResults = async (search) => {
    let resultArray =  await Results.find({}, err => {
         console.log(err)
     })
-    
+    console.log(resultArray)
     return {results: resultArray}
 }
 
@@ -20,8 +20,6 @@ router.get("/", (req, res) => {
 })
 
 router.post("/", async (req, res) => {
-    let resultArray =  await Results.find({})
-    console.log('rrr', resultArray)
     res.render("results", searchResults(req.body.search))
 })
 

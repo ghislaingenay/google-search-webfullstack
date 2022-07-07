@@ -21,21 +21,5 @@ const resultSchema = new mongoose.Schema({
   }]
 })
 
-module.exports = mongoose.model("results", {
-  title: {
-    type: String,
-    require: true
-  },
-  description: {
-    type: String,
-    require: true,
-  },
-  url: {
-    type: String,
-    require: true,
-  },
-  links: [{
-    title: String,
-    url: String,
-  }]
-})
+module.exports = mongoose.model("results", resultSchema)
+
