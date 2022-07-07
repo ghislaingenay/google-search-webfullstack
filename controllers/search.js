@@ -8,9 +8,5 @@ router.get("/", (req, res) => {
     res.render('search')
 })
 
-router.get("/search",(req, res) => {
-    res.render('search')
-})
-
 // Export
 module.exports = router
