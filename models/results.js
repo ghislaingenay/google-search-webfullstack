@@ -21,6 +21,5 @@ const resultSchema = new mongoose.Schema({
   }]
 })
 
-const Results = mongoose.model("Search", searchSchema)
+module.exports = mongoose.model("results", resultSchema)
 
-module.exports = Results;
