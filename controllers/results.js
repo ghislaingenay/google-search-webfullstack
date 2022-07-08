@@ -45,18 +45,16 @@ router.post("/", async (req, res, next) => {
 
 // router.post("/", async (req, res, next) => {
 //     try {
-//         let reg = new RegExp(req.body.search)
 //         let resultArray = await Results.aggregate([{
-//             $search: {
-//                 title: req.body.search
-//             }
-//         }])
-//         res.render("results", {
-//             results: resultArray
-//         })
+//             $search: { "text":{
+//                 "query": req.body.search,
+//                 "path": "description"
+//             }}
+//         }, ])
 //     } catch (err) {
 //         next(err)
 //     }
 // })
+
 
 module.exports = router
