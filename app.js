@@ -52,7 +52,8 @@ mongoose.connect(
     // ...
 
     // Routes
-    const search = require('./controllers/search.js'); app.use('/', search);
+    const search = require('./controllers/search.js'); 
+    app.use('/', search);
 
 
     const results = require('./controllers/results.js')
