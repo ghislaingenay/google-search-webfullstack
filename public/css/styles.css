@@ -41,7 +41,7 @@ SEARCH.HTML
 }
 
 .searchpage input {
-    padding-left: 30px;
+    padding-left: 10px;
     border: 1px solid #c4c4c4;
     border-radius: 20px;
     color: #5b5b5b;
@@ -70,6 +70,8 @@ SEARCH.HTML
     font-family: Helvetica, sans-serif;
     width: 100%;
     padding: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
     grid-template-columns: 110px auto;
     grid-column-gap: 30px;
  }
@@ -94,7 +96,7 @@ nav form input {
     box-sizing: border-box;   
  
     height: 40px;
-    padding-left: 30px;
+    padding-left: 10px;
     width: 100%; 
 }
 
