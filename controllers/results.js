@@ -12,35 +12,51 @@ router.get("/", (req, res) => {
 
 router.post("/", async (req, res, next) => {
     try {
-    let reg = new RegExp(req.body.search)
-    let resultArray = await Results.find({
-        $or: [{
-                title: {
-                    $regex: reg,
-                    $options: "gi"
+        let reg = new RegExp(req.body.search)
+        let resultArray = await Results.find({
+            $or: [{
+                    title: {
+                        $regex: reg,
+                        $options: "gi"
+                    }
+                },
+                {
+                    description: {
+                        $regex: reg,
+                        $options: "gi"
+                    }
+                },
+                {
+                    url: {
+                        $regex: reg,
+                        $options: "gi"
+                    }
                 }
-            },
-            {
-                description: {
-                    $regex: reg,
-                    $options: "gi"
-                }
-            },
-            {
-                url: {
-                    $regex: reg,
-                    $options: "gi"
-                }
-            }
-        ]
+            ]
 
-    },)
-    res.render("results", {
-        results: resultArray
-    })
-} catch (err) {
-    next(err)
-}
+        }, )
+        res.render("results", {
+            results: resultArray
+        })
+    } catch (err) {
+        next(err)
+    }
 })
+
+// router.post("/", async (req, res, next) => {
+//     try {
+//         let reg = new RegExp(req.body.search)
+//         let resultArray = await Results.aggregate([{
+//             $search: {
+//                 title: req.body.search
+//             }
+//         }])
+//         res.render("results", {
+//             results: resultArray
+//         })
+//     } catch (err) {
+//         next(err)
+//     }
+// })
 
 module.exports = router
