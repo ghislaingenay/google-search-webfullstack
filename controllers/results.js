@@ -10,7 +10,8 @@ router.get("/", (req, res) => {
     res.render("results")
 })
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
+    try {
     let reg = new RegExp(req.body.search)
     let resultArray = await Results.find({
         $or: [{
@@ -33,10 +34,13 @@ router.post("/", async (req, res) => {
             }
         ]
 
-    })
+    },)
     res.render("results", {
         results: resultArray
     })
+} catch (err) {
+    next(err)
+}
 })
 
 module.exports = router
