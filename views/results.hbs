@@ -7,20 +7,20 @@
 </nav>
 
 
-  {{#if results.length}}
-  <div class="research">
+{{#if results.length}}
+<div class="research">
   <small>{{results.length}} Results</small>
-  </div>
-  {{else}}
-    <div class="research">
+</div>
+{{else}}
+<div class="research">
   <small>0 Result</small>
-  </div>
-  <div class="result">
+</div>
+<div class="result">
   <p>No results for these page</p>
-    </div>
+</div>
 
-  {{/if}}
+{{/if}}
 </div>
 {{#each results as |result|}}
-  {{>results result=result}}
+{{>results result=result}}
 {{/each}}
